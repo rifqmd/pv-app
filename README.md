@@ -33,4 +33,4 @@ Technologies used in the project:
 
 <h2>🛡️ License:</h2>
 
-This project is licensed under the Rifqi Muhammad
+This project is licensed under the MIT License
