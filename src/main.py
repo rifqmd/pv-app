@@ -5,8 +5,10 @@ from tkinter.ttk import Progressbar
 import time
 import tkinter.font
 
+from tkinter import colorchooser
+
 # librarty bangun ruang
-from lib_groupC import persegi_panjang
+from module import buat_persegi
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -76,33 +78,33 @@ class SecondPage:
         # 48x48 icon logo
         
         # set button square
-        self.imgSquare = PhotoImage(file='img/square.gif')
+        self.imgSquare = PhotoImage(file='img/square.png')
         self.btnSquare = Button(main_frame, text='Square', image=self.imgSquare, compound='top', command=self.onKlikSquare, width=70)
         # self.btnSquare.pack(side='left', fill=Y)
         self.btnSquare.place(x=10, y=40)
         
         # set button rectangle
-        self.imgRectangle = PhotoImage(file='img/rectangle.gif')
+        self.imgRectangle = PhotoImage(file='img/rectangle.png')
         self.btnRectangle = Button(main_frame, text='Rectangle', image=self.imgRectangle, compound='top', command=self.onKlikRectangle, width=70)
         self.btnRectangle.place(x=90, y=40)
         
         # set button circle
-        self.imgCircle = PhotoImage(file='img/circle.gif')
+        self.imgCircle = PhotoImage(file='img/circle.png')
         self.btnCircle = Button(main_frame, text='Circle', image=self.imgCircle, compound='top', command=self.onKlikCircle, width=70)
         self.btnCircle.place(x=170, y=40)
 
         # set button tringle
-        self.imgTriangle = PhotoImage(file='img/triangle.gif')
+        self.imgTriangle = PhotoImage(file='img/triangle.png')
         self.btnTriangle = Button(main_frame, text='Triangle', image=self.imgTriangle, compound='top', command=self.onKlikTriangle, width=70)
         self.btnTriangle.place(x=250, y=40)
 
         # set button tringle
-        self.imgPentagon = PhotoImage(file='img/pentagon.gif')
+        self.imgPentagon = PhotoImage(file='img/pentagon.png')
         self.btnPentagon = Button(main_frame, text='Pentagon', image=self.imgPentagon, compound='top', command=self.onKlikPentagon, width=70)
         self.btnPentagon.place(x=330, y=40)
         
         # set button hexagon
-        self.imgHexagon = PhotoImage(file='img/hexagon.gif')
+        self.imgHexagon = PhotoImage(file='img/hexagon.png')
         self.btnTriangle = Button(main_frame, text='Hexagon', image=self.imgHexagon, compound='top', command=self.onKlikHexagon, width=70)
         self.btnTriangle.place(x=410, y=40)
         
@@ -112,19 +114,27 @@ class SecondPage:
         root.title('::Bangun Ruang Persegi::')\
             
         def choose_color():
-            # global color
-            # color = colorchooser.askcolor(title="Choose color")[0]
-            colorchooser.askcolor()
+            global color
+            color = colorchooser.askcolor(title="Choose color")[0]
+            # colorchooser.askcolor()
+        
+        def tampilkan_gambar():
+            # Buat gambar persegi dengan titik awal (200, 100) dan titik akhir (200, 800)
+            gambar = np.zeros((1000, 1000, 3), dtype=np.int16)
+            y1, x1 = 200, 100
+            y2, x2 = 200, 600
+            hd, hw, pr, pg, pb, lr, lg, lb = 0, 0, 0, 0, 0, 0, 0, 0
+            buat_persegi(gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb)
             
-        def process():
-            # pass
-            x1 = int(e_x1.get())
-            x2 = int(e_x2.get())
-            y1 = int(e_y1.get())
-            y2 = int(e_y2.get())
-            outline = int(e_size_outline.get())
-            fill = int(e_size_dot.get())
-            view = persegi_panjang(x1, x2, y1, y2, outline, fill)
+        # def process():
+        #     # pass
+        #     x1 = int(e_x1.get())
+        #     x2 = int(e_x2.get())
+        #     y1 = int(e_y1.get())
+        #     y2 = int(e_y2.get())
+        #     outline = int(e_size_outline.get())
+        #     fill = int(e_size_dot.get())
+        #     view = persegi_panjang(x1, x2, y1, y2, outline, fill)
             
             # class orang:
             #     def __init__(self, size_outline, size_dot, x1, x2, y1, y2):
@@ -136,7 +146,6 @@ class SecondPage:
             #         self.y2 = y2
             
             # ditampilkan = persegi_panjang(e_size_outline.get(), e_size_dot.get(), e_x1.get(), e_x2.get(), e_y1.get(), e_y2.get())
-
 
         judul = Label(root, text="Menentukan Ukuran Dan Warna").place(x=70, y=10)
         size_outline = Label(root, text="‣ Ukuran Outline").place(x=20, y=50)
@@ -164,8 +173,11 @@ class SecondPage:
         y2 = Label(root, text="‣ Ukuran Y-2").place(x=200, y=305)
         e_y2 = Entry(root, width=10).place(x=200, y=330)
         
-        # btn_process = Button(root, text='PROCESS', command=rectangle)
-        btn_process = Button(root, text='PROCESS', command=process)
+        choose_color_button = Button(root, text='Pilih warna', command=choose_color)
+        choose_color_button.pack()
+        
+        btn_process = Button(root, text='Proses', command=tampilkan_gambar)
+        # btn_process = Button(root, text='PROCESS', command=process)
         btn_process.place(x=200, y=400)
         # process = rectangle(e_size_outline, e_size_dot, e_x1, e_x2, e_y1, e_y2, btn_warna_outline, btn_warna_fill)
         

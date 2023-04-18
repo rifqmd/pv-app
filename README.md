@@ -20,10 +20,6 @@ Here're some of the project's best features:
 __init__.py
 ```
 
-<h2>🍰 Contribution Guidelines:</h2>
-
-  
-  
 <h2>💻 Built with</h2>
 
 Technologies used in the project:

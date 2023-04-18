@@ -48,14 +48,14 @@ def buat_garis(Gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb):
                         Gambar[j, i, 2] = lb
     return Gambar
 
-def persegi_panjang(gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb, pd, lw, e_size_outline, e_size_dot, e_x1, e_x2, e_y1, e_y2):
+# def persegi_panjang(gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb, pd, lw, e_size_outline, e_size_dot, e_x1, e_x2, e_y1, e_y2):
     row = int(1000)
     col = int(1000)
 
-    x1, x2 = e_x1, e_x2
-    y1, y2 = e_y1, e_y2
-    # y1 = 200; x1 = 100
-    # y2 = 200; x2 = 800
+    # x1, x2 = e_x1, e_x2
+    # y1, y2 = e_y1, e_y2
+    y1 = 200; x1 = 100
+    y2 = 200; x2 = 800
     
     #THE USER DECIDES THE POINT (VERTEX) DIAMETER AND COLOR
     pd = int(e_size_dot); pr = 0; pg = 0; pb = 255
@@ -71,6 +71,35 @@ def persegi_panjang(gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb, pd, 
 
     batas = (e_y1+e_y2)+1
     while y1 <= batas:
+        y1 += 1
+        y2 += 1
+        hasil = buat_garis(gambar, y1, x1, y2, x2, hd, hw, pr, pb, pg, lr, lg, lb)
+        gambar = hasil
+
+    plt.figure("Rectangle")
+    plt.imshow(hasil)
+    plt.show()
+    
+def buat_persegi(gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb):
+    row = int(1000)
+    col = int(1000)
+    
+    y1 = 200; x1 = 100
+    y2 = 200; x2 = 800
+
+    #THE USER DECIDES THE POINT (VERTEX) DIAMETER AND COLOR
+    pd = int(1); pr = 0; pg = 0; pb = 255
+
+    #THE USER DECIDE THE LINE WIDTH AND COLOR
+    lw = int(10); lr = 0; lg = 0; lb = 255
+    hd = int(pd/2) #calculate the half point diameter
+    hw = int(lw/2) #calculate the half-half line width
+
+    #ARRAY UNTUK GAMBAR
+    gambar = np.zeros(shape=(row, col, 3), dtype=np.int16) #latar hitam
+    gambar[:,:,:] = 255                                     #latar putih
+
+    while y1 <= 401:
         y1 += 1
         y2 += 1
         hasil = buat_garis(gambar, y1, x1, y2, x2, hd, hw, pr, pb, pg, lr, lg, lb)

@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from lib_groupC import buat_garis
+from module import buat_garis
 
 #SETTING THE SIZE OF THE CANVAS
 row = int(1000)
