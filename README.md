@@ -17,7 +17,7 @@ Here're some of the project's best features:
 <p>1. Install</p>
 
 ```
-__init__.py
+__main__.py
 ```
 
 <h2>💻 Built with</h2>
