@@ -1,36 +1,45 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from tkinter import *
 
-def buat_garis(Gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb):
+# prgress bar
+from tkinter.ttk import Progressbar
+import time
+
+def buat_garis(gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb):
     for i in range(x1 - hd, x1 + hd):
         for j in range(y1 - hd, y1 + hd):
             if ((i - x1) ** 2 + (j - y1) ** 2) < hd ** 2:
-                Gambar[j, i, 0] = pr
-                Gambar[j, i, 1] = pg
-                Gambar[j, i, 2] = pb
+                gambar[j, i, 0] = pr
+                gambar[j, i, 1] = pg
+                gambar[j, i, 2] = pb
     for i in range(x2 - hd, x2 + hd):
         for j in range(y2 - hd, y2 + hd):
             if ((i - x2) ** 2 + (j - y2) ** 2) < hd ** 2:
-                Gambar[j, i, 0] = pr
-                Gambar[j, i, 1] = pg
-                Gambar[j, i, 2] = pb
+                gambar[j, i, 0] = pr
+                gambar[j, i, 1] = pg
+                gambar[j, i, 2] = pb
 
     dy = y2 - y1
     dx = x2 - x1
     if dy <= dx:
         my = dy / dx
+        # if dy != 0:
+        #     my = dy / dx
+        # else:
+        #     print("Tidak bisa membagi dengan nol.")
         for j in range(x1, x2):
             i = int(my * (j - x1) + y1)
             x = j
             y = i
-            if y % 50:
-                print('x, y = ', x, ',', y)
+            # if y % 50:
+            #     print('x, y = ', x, ',', y)
             for i in range(x - hw, x + hw):
                 for j in range(y - hw, y + hw):
                     if ((i - x) ** 2 + (j - y) ** 2) < hw ** 2:
-                        Gambar[j, i, 0] = lr
-                        Gambar[j, i, 1] = lg
-                        Gambar[j, i, 2] = lb
+                        gambar[j, i, 0] = lr
+                        gambar[j, i, 1] = lg
+                        gambar[j, i, 2] = lb
 
     if dy > dx:
         mx = dx / dy
@@ -38,15 +47,15 @@ def buat_garis(Gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb):
             i = int(mx * (j - y1) + x1)
             x = i
             y = j
-            if x % 50:
-                print('x, y = ', x, ',', y)
+            # if x % 50:
+            #     print('x, y = ', x, ',', y)
             for i in range(x - hw, x + hw):
                 for j in range(y - hw, y + hw):
                     if ((i - x) ** 2 + (j - y) ** 2) < hw ** 2:
-                        Gambar[j, i, 0] = lr
-                        Gambar[j, i, 1] = lg
-                        Gambar[j, i, 2] = lb
-    return Gambar
+                        gambar[j, i, 0] = lr
+                        gambar[j, i, 1] = lg
+                        gambar[j, i, 2] = lb
+    return gambar
 
 # def persegi_panjang(gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb, pd, lw, e_size_outline, e_size_dot, e_x1, e_x2, e_y1, e_y2):
     row = int(1000)
@@ -79,32 +88,38 @@ def buat_garis(Gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb):
     plt.figure("Rectangle")
     plt.imshow(hasil)
     plt.show()
+  
+def buat_persegi(gambar, y1, x1, y2, x2, pd, pw, pr, pg, pb, lr, lg, lb):
+    hd = int(pd/2)
+    hw = int(pw/2)
     
-def buat_persegi(gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb):
-    row = int(1000)
-    col = int(1000)
-    
-    y1 = 200; x1 = 100
-    y2 = 200; x2 = 800
-
-    #THE USER DECIDES THE POINT (VERTEX) DIAMETER AND COLOR
-    pd = int(1); pr = 0; pg = 0; pb = 255
-
-    #THE USER DECIDE THE LINE WIDTH AND COLOR
-    lw = int(10); lr = 0; lg = 0; lb = 255
-    hd = int(pd/2) #calculate the half point diameter
-    hw = int(lw/2) #calculate the half-half line width
-
-    #ARRAY UNTUK GAMBAR
-    gambar = np.zeros(shape=(row, col, 3), dtype=np.int16) #latar hitam
-    gambar[:,:,:] = 255                                     #latar putih
-
-    while y1 <= 401:
+    batas  = (y1+y2) + 1
+    while y1 <= batas:
         y1 += 1
         y2 += 1
-        hasil = buat_garis(gambar, y1, x1, y2, x2, hd, hw, pr, pb, pg, lr, lg, lb)
+        hasil = buat_garis(gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb)
         gambar = hasil
-
+        
     plt.figure("Rectangle")
     plt.imshow(hasil)
     plt.show()
+
+# def progress_bar():
+    
+#     progress = Progressbar(root, length=280, orient='horizontal', mode='determinate')
+#     progress.grid(row=0, )
+#     jumlah = Label(root, text=' ')
+#     jumlah.grid(row=1)
+    
+#     def count():
+#         return f"progress : {progress['value']}%"
+
+#     def start():
+#         while progress['value'] < 100:
+#             progress['value'] += 1
+#             jumlah['text'] = count()
+#             time.sleep(0.05)
+#             root.update_idletasks()
+
+#     btn = Button(root, text='start', command=start)
+#     btn.grid()
