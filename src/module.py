@@ -32,8 +32,8 @@ def buat_garis(gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb):
             i = int(my * (j - x1) + y1)
             x = j
             y = i
-            # if y % 50:
-            #     print('x, y = ', x, ',', y)
+            if y % 50:
+                print('x, y = ', x, ',', y)
             for i in range(x - hw, x + hw):
                 for j in range(y - hw, y + hw):
                     if ((i - x) ** 2 + (j - y) ** 2) < hw ** 2:
@@ -47,8 +47,8 @@ def buat_garis(gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb):
             i = int(mx * (j - y1) + x1)
             x = i
             y = j
-            # if x % 50:
-            #     print('x, y = ', x, ',', y)
+            if x % 50:
+                print('x, y = ', x, ',', y)
             for i in range(x - hw, x + hw):
                 for j in range(y - hw, y + hw):
                     if ((i - x) ** 2 + (j - y) ** 2) < hw ** 2:
@@ -104,22 +104,76 @@ def buat_persegi(gambar, y1, x1, y2, x2, pd, pw, pr, pg, pb, lr, lg, lb):
     plt.imshow(hasil)
     plt.show()
 
-# def progress_bar():
+def buat_segilima(gambar, y1, x1, y2, x2, pd, pw, pr, pg, pb, lr, lg, lb):
+    hd = int(pd/2)
+    hw = int(pw/2)
     
-#     progress = Progressbar(root, length=280, orient='horizontal', mode='determinate')
-#     progress.grid(row=0, )
-#     jumlah = Label(root, text=' ')
-#     jumlah.grid(row=1)
+    batas_a = y1 * 2
+    while y1 <= batas_a:
+        y2 += 1
+        y1 += 1
+        x2 += 1
+        x1 -= 1
+        hasil = buat_garis(gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb)
+        gambar = hasil
     
-#     def count():
-#         return f"progress : {progress['value']}%"
+    selisih = batas_a / 2
+    batas_b = batas_a + selisih
+    while y1 <= batas_b:
+        y2 += 2
+        y1 += 2
+        x2 -= 1
+        x1 += 1
+        hasil = buat_garis(gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb)
+        gambar = hasil
+    
+    plt.figure("Hexagon")
+    plt.imshow(hasil)
+    plt.show()
 
-#     def start():
-#         while progress['value'] < 100:
-#             progress['value'] += 1
-#             jumlah['text'] = count()
-#             time.sleep(0.05)
-#             root.update_idletasks()
+def buat_segienam(gambar, y1, x1, y2, x2, pd, pw, pr, pg, pb, lr, lg, lb):
+    hd = int(pd/2)
+    hw = int(pw/2)
+    
+    batas_a = y1 * 2
+    while y1 <= batas_a:
+        y2 += 2
+        y1 += 2
+        x2 += 1
+        x1 -= 1
+        hasil = buat_garis(gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb)
+        gambar = hasil
+    
+    selisih = batas_a / 2
+    batas_b = batas_a + selisih
+    while y1 <= batas_b:
+        y2 += 2
+        y1 += 2
+        x2 -= 1
+        x1 += 1
+        hasil = buat_garis(gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb)
+        gambar = hasil
+    
+    plt.figure("Hexagon")
+    plt.imshow(hasil)
+    plt.show()
 
-#     btn = Button(root, text='start', command=start)
-#     btn.grid()
+def progress_bar():
+    
+    progress = Progressbar(root, length=280, orient='horizontal', mode='determinate')
+    progress.grid(row=0, )
+    jumlah = Label(root, text=' ')
+    jumlah.grid(row=1)
+    
+    def count():
+        return f"progress : {progress['value']}%"
+
+    def start():
+        while progress['value'] < 100:
+            progress['value'] += 1
+            jumlah['text'] = count()
+            time.sleep(0.05)
+            root.update_idletasks()
+
+    btn = Button(root, text='start', command=start)
+    btn.grid()

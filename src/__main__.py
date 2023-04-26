@@ -2,8 +2,8 @@ from tkinter import *
 from tkinter import colorchooser
 from tkinter import messagebox
 from tkinter.ttk import Progressbar
-import time
 from module import *
+import time
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -367,10 +367,228 @@ class SecondPage:
         root.mainloop()
     
     def onKlikPentagon(self, event=None):
-        pass
+        root = Tk()
+        root.geometry('350x500')
+        root.title('::Bangun Ruang Segienam::')\
+            
+        def choose_color():
+            global pr, pg, pb, lr, lg, lb
+            
+            # memilih warna outline
+            outline_color = colorchooser.askcolor(title="Choose color outline")[0]
+            pr, pg, pb = outline_color[0], outline_color[1], outline_color[2]
+            
+            # memilih warna fill
+            fill_color = colorchooser.askcolor(title="Choose color fill")[0]
+            lr, lg, lb = fill_color[0], fill_color[1], fill_color[2]
+            
+        def tampilkan_gambar():
+            gambar = np.zeros((1000, 1000, 3), dtype=np.uint8)
+            gambar[:,:,:] = 255
+
+            y1 = int(input("Masukkan nilai y1: "))
+            x1 = int(input("Masukkan nilai x1: "))
+            y2 = int(input("Masukkan nilai y2: "))
+            x2 = int(input("Masukkan nilai x2: "))
+
+            def count():
+                return f"progress : {progress['value']}%"
+            
+            while progress['value'] < 100:
+                progress['value'] += 1
+                jumlah['text'] = count()
+                time.sleep(0.04)
+                root.update_idletasks()
+
+            buat_segilima(gambar, y1, x1, y2, x2, 10, 10, pr, pg, pb, lr, lg, lb)
+            
+        judul = Label(root, text="Menentukan Ukuran Dan Warna").place(x=70, y=10)
+        
+        size_outline = Label(root, text="‣ Ukuran Outline").place(x=20, y=50)
+        e_size_outline = Entry(root, width=10)
+        e_size_outline.place(x=20, y=75)
+        
+        size_dot = Label(root, text="‣ Ukuran Titik").place(x=200, y=50)
+        e_size_dot = Entry(root, width=10)
+        e_size_dot.place(x=200, y=75)
+        
+        color_outline = Label(root, text="‣ Pilih Warna").place(x=20, y=115)
+        btn_warna_outline = Button(root, text='Click', command=choose_color)
+        btn_warna_outline.place(x=20, y=140)
+        
+        judul = Label(root, text="Menentukan Titik Koordinat").place(x=70, y=200)
+        y1 = Label(root, text="‣ Ukuran Y1").place(x=20, y=240)
+        e_y1 = Entry(root, width=10)
+        e_y1.place(x=20, y=265)
+        
+        x1 = Label(root, text="‣ Ukuran X1").place(x=200, y=240)
+        e_x1 = Entry(root, width=10)
+        e_x1.place(x=200, y=265)
+        
+        y2 = Label(root, text="‣ Ukuran Y2").place(x=20, y=305)
+        e_y2 = Entry(root, width=10)
+        e_y2.place(x=20, y=330)
+        
+        x2 = Label(root, text="‣ Ukuran X2").place(x=200, y=305)
+        e_x2 = Entry(root, width=10)
+        e_x2.place(x=200, y=330)
+        
+        def process():
+            gambar = np.zeros((1000, 1000, 3), dtype=np.uint8)
+            gambar[:,:,:] = 255
+            pd = VAR_e_size_outline.get()
+            pw = VAR_e_size_dot.get()
+            y1 = VAR_e_y1.get()
+            x1 = VAR_e_x1.get()
+            y2 = VAR_e_y2.get()
+            x2 = VAR_e_x2.get()
+            
+            def count():
+                return f"progress : {progress['value']}%"
+            
+            while progress['value'] < 100:
+                progress['value'] += 1
+                jumlah['text'] = count()
+                time.sleep(0.04)
+                root.update_idletasks()
+            buat_segilima(gambar, y1, x1, y2, x2, pd, pw, pr, pg, pb, lr, lg, lb)
+            print(y1, x1, y2, x2)
+        VAR_e_size_outline = IntVar()
+        VAR_e_size_dot = IntVar()
+        VAR_e_x1 = IntVar()
+        VAR_e_x2 = IntVar()
+        VAR_e_y1 = IntVar()
+        VAR_e_y2 = IntVar()
+        e_size_outline.config(textvariable=VAR_e_size_outline)
+        e_size_dot.config(textvariable=VAR_e_size_dot)
+        e_x1.config(textvariable=VAR_e_x1)
+        e_x2.config(textvariable=VAR_e_x2)
+        e_y1.config(textvariable=VAR_e_y1)
+        e_y2.config(textvariable=VAR_e_y2)
+        
+        btn_process = Button(root, text='Proses', command=tampilkan_gambar)
+        btn_process.place(x=200, y=400)
+        btn_process2 = Button(root, text='Proses (BUG)', command=process)
+        btn_process2.place(x=50, y=400)
+        
+        progress = Progressbar(root, length=280, orient='horizontal', mode='determinate')
+        progress.place(x=25, y=450)
+        jumlah = Label(root, text=' ')
+        jumlah.place(x=120, y=460)
+        
+        root.mainloop()
     
     def onKlikHexagon(self, event=None):
-        pass
+        root = Tk()
+        root.geometry('350x500')
+        root.title('::Bangun Ruang Segienam::')\
+            
+        def choose_color():
+            global pr, pg, pb, lr, lg, lb
+            
+            # memilih warna outline
+            outline_color = colorchooser.askcolor(title="Choose color outline")[0]
+            pr, pg, pb = outline_color[0], outline_color[1], outline_color[2]
+            
+            # memilih warna fill
+            fill_color = colorchooser.askcolor(title="Choose color fill")[0]
+            lr, lg, lb = fill_color[0], fill_color[1], fill_color[2]
+            
+        def tampilkan_gambar():
+            gambar = np.zeros((1000, 1000, 3), dtype=np.uint8)
+            gambar[:,:,:] = 255
+
+            y1 = int(input("Masukkan nilai y1: "))
+            x1 = int(input("Masukkan nilai x1: "))
+            y2 = int(input("Masukkan nilai y2: "))
+            x2 = int(input("Masukkan nilai x2: "))
+
+            def count():
+                return f"progress : {progress['value']}%"
+            
+            while progress['value'] < 100:
+                progress['value'] += 1
+                jumlah['text'] = count()
+                time.sleep(0.04)
+                root.update_idletasks()
+
+            buat_segienam(gambar, y1, x1, y2, x2, 10, 10, pr, pg, pb, lr, lg, lb)
+            
+        judul = Label(root, text="Menentukan Ukuran Dan Warna").place(x=70, y=10)
+        
+        size_outline = Label(root, text="‣ Ukuran Outline").place(x=20, y=50)
+        e_size_outline = Entry(root, width=10)
+        e_size_outline.place(x=20, y=75)
+        
+        size_dot = Label(root, text="‣ Ukuran Titik").place(x=200, y=50)
+        e_size_dot = Entry(root, width=10)
+        e_size_dot.place(x=200, y=75)
+        
+        color_outline = Label(root, text="‣ Pilih Warna").place(x=20, y=115)
+        btn_warna_outline = Button(root, text='Click', command=choose_color)
+        btn_warna_outline.place(x=20, y=140)
+        
+        judul = Label(root, text="Menentukan Titik Koordinat").place(x=70, y=200)
+        y1 = Label(root, text="‣ Ukuran Y1").place(x=20, y=240)
+        e_y1 = Entry(root, width=10)
+        e_y1.place(x=20, y=265)
+        
+        x1 = Label(root, text="‣ Ukuran X1").place(x=200, y=240)
+        e_x1 = Entry(root, width=10)
+        e_x1.place(x=200, y=265)
+        
+        y2 = Label(root, text="‣ Ukuran Y2").place(x=20, y=305)
+        e_y2 = Entry(root, width=10)
+        e_y2.place(x=20, y=330)
+        
+        x2 = Label(root, text="‣ Ukuran X2").place(x=200, y=305)
+        e_x2 = Entry(root, width=10)
+        e_x2.place(x=200, y=330)
+        
+        def process():
+            gambar = np.zeros((1000, 1000, 3), dtype=np.uint8)
+            gambar[:,:,:] = 255
+            pd = VAR_e_size_outline.get()
+            pw = VAR_e_size_dot.get()
+            y1 = VAR_e_y1.get()
+            x1 = VAR_e_x1.get()
+            y2 = VAR_e_y2.get()
+            x2 = VAR_e_x2.get()
+            
+            def count():
+                return f"progress : {progress['value']}%"
+            
+            while progress['value'] < 100:
+                progress['value'] += 1
+                jumlah['text'] = count()
+                time.sleep(0.04)
+                root.update_idletasks()
+            buat_segienam(gambar, y1, x1, y2, x2, pd, pw, pr, pg, pb, lr, lg, lb)
+            print(y1, x1, y2, x2)
+        VAR_e_size_outline = IntVar()
+        VAR_e_size_dot = IntVar()
+        VAR_e_x1 = IntVar()
+        VAR_e_x2 = IntVar()
+        VAR_e_y1 = IntVar()
+        VAR_e_y2 = IntVar()
+        e_size_outline.config(textvariable=VAR_e_size_outline)
+        e_size_dot.config(textvariable=VAR_e_size_dot)
+        e_x1.config(textvariable=VAR_e_x1)
+        e_x2.config(textvariable=VAR_e_x2)
+        e_y1.config(textvariable=VAR_e_y1)
+        e_y2.config(textvariable=VAR_e_y2)
+        
+        btn_process = Button(root, text='Proses', command=tampilkan_gambar)
+        btn_process.place(x=200, y=400)
+        btn_process2 = Button(root, text='Proses (BUG)', command=process)
+        btn_process2.place(x=50, y=400)
+        
+        progress = Progressbar(root, length=280, orient='horizontal', mode='determinate')
+        progress.place(x=25, y=450)
+        jumlah = Label(root, text=' ')
+        jumlah.place(x=120, y=460)
+        
+        root.mainloop()
     
     def kembali(self):
         self.parent.destroy()
