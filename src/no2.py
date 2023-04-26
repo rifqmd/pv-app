@@ -31,8 +31,8 @@ y2 = 400; x2 = 400
 x2a = float(x2) + 0.29
 
 # Polygon
-y2_p, x2_p = 601, 600
 y1_p, x1_p = 600, 600
+y2_p, x2_p = 601, 600
 
 Gambar = np.zeros(shape=(rowMax+1, colMax+1, 3), dtype=np.uint8)
 
