@@ -3,16 +3,10 @@ from tkinter import colorchooser
 from tkinter import messagebox
 from tkinter.ttk import Progressbar
 import time
-
-# librarty bangun ruang
-# from module import buat_persegi
-# from module import choose_color
 from module import *
 
 import matplotlib.pyplot as plt
 import numpy as np
-
-# from functools import partial
 
 class FirstPage:
     def __init__(self, parent, title):

@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import warnings
 
-from P6_Library import buat_garis
+from module import buat_garis
 print("\033c")
 warnings.filterwarnings('ignore')
 
