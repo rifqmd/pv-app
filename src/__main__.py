@@ -341,30 +341,7 @@ class SecondPage:
         messagebox.showinfo('Informasi', 'create circle', parent=self.parent)
     
     def onKlikTriangle(self, event=None):
-        root = Tk()
-        root.geometry('350x500')
-        root.title('::COBA PROSES BAR::')
-        
-        progress = Progressbar(root, length=280, orient='horizontal', mode='determinate')
-        progress.grid(row=0, )
-        jumlah = Label(root, text=' ')
-        jumlah.grid(row=1)
-        
-        def count():
-            return f"progress : {progress['value']}%"
-
-        def start():
-            while progress['value'] < 100:
-                progress['value'] += 1
-                jumlah['text'] = count()
-                time.sleep(0.05)
-                root.update_idletasks()
-
-        btn = Button(root, text='start', command=start)
-        btn.grid()
-        
-        # self.parent.destroy()
-        root.mainloop()
+        messagebox.showinfo('Informasi', 'create triangle', parent=self.parent)
     
     def onKlikPentagon(self, event=None):
         root = Tk()
