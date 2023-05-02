@@ -32,8 +32,9 @@ def buat_garis(gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb):
             i = int(my * (j - x1) + y1)
             x = j
             y = i
-            if y % 50:
-                print('x, y = ', x, ',', y)
+            # if y % 50:
+            #     print('x, y = ', x, ',', y)
+            print('x, y = ', x, ',', y)
             for i in range(x - hw, x + hw):
                 for j in range(y - hw, y + hw):
                     if ((i - x) ** 2 + (j - y) ** 2) < hw ** 2:
@@ -47,8 +48,9 @@ def buat_garis(gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb):
             i = int(mx * (j - y1) + x1)
             x = i
             y = j
-            if x % 50:
-                print('x, y = ', x, ',', y)
+            # if x % 50:
+                # print('x, y = ', x, ',', y)
+            print('x, y = ', x, ',', y)
             for i in range(x - hw, x + hw):
                 for j in range(y - hw, y + hw):
                     if ((i - x) ** 2 + (j - y) ** 2) < hw ** 2:
