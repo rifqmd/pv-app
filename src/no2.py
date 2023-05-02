@@ -89,7 +89,6 @@ def buat_garis(Gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb):
 
 def buatLingkaran(Gambar, y1, x1, radiusMax):
     for i in range(0, rowMax+1):
-        # print('Loading...')
         for j in range(0, colMax+1):
             if ((i-y1)**2 + (j-x1)**2) >= 0 and ((i-y1)**2 + (j-x1)**2) < batasStart**2:
                 Gambar[i, j, 2] = 255

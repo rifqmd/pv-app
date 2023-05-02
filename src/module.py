@@ -128,6 +128,34 @@ def buat_segienam(gambar, y1, x1, y2, x2, pd, pw, pr, pg, pb, lr, lg, lb):
     plt.imshow(hasil)
     plt.show()
 
+def buat_segitiga(gambar, y1, x1, y2, x2, pd, pw, pr, pg, pb, lr, lg, lb):
+    hd = int(pd/2)
+    hw = int(pw/2)
+    
+    batas_a = y1 * 2
+    while y1 <= batas_a:
+        y2 += 1
+        y1 += 1
+        x2 += 1
+        x1 -= 1
+        hasil = buat_garis(gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb)
+        gambar = hasil
+    
+    # selisih = batas_a / 2
+    # batas_b = batas_a + selisih
+    # while y1 <= batas_b:
+    #     y2 += 2
+    #     y1 += 2
+    #     x2 -= 1
+    #     x1 += 1
+    #     hasil = buat_garis(gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb)
+    #     gambar = hasil
+    
+    plt.figure("Segitiga")
+    plt.imshow(hasil)
+    plt.show()
+
+
 def progress_bar():
     
     progress = Progressbar(root, length=280, orient='horizontal', mode='determinate')
