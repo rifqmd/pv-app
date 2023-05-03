@@ -58,6 +58,15 @@ def buat_garis(gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb):
                         gambar[j, i, 1] = lg
                         gambar[j, i, 2] = lb
     return gambar
+
+def buat_titik(gambar, r, x, y, pr, pg, pb,):
+    for i in range(x - r, x + r + 1):
+        for j in range(y - r, y + r + 1):
+            if ((i - x) ** 2 + (j - y) ** 2) <= (r ** 2):
+                gambar[j, i, 0] = pr
+                gambar[j, i, 1] = pg
+                gambar[j, i, 2] = pb
+    return gambar
   
 def buat_persegi(gambar, y1, x1, y2, x2, pd, pw, pr, pg, pb, lr, lg, lb):
     hd = int(pd/2)
@@ -141,17 +150,13 @@ def buat_segitiga(gambar, y1, x1, y2, x2, pd, pw, pr, pg, pb, lr, lg, lb):
         hasil = buat_garis(gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb)
         gambar = hasil
     
-    # selisih = batas_a / 2
-    # batas_b = batas_a + selisih
-    # while y1 <= batas_b:
-    #     y2 += 2
-    #     y1 += 2
-    #     x2 -= 1
-    #     x1 += 1
-    #     hasil = buat_garis(gambar, y1, x1, y2, x2, hd, hw, pr, pg, pb, lr, lg, lb)
-    #     gambar = hasil
-    
     plt.figure("Segitiga")
+    plt.imshow(hasil)
+    plt.show()
+def buat_lingkaran(gambar, r, x, y, pr, pg, pb):
+    hasil = buat_titik(gambar, r, x, y, pr, pg, pb)
+    
+    plt.figure("Lingkaran")
     plt.imshow(hasil)
     plt.show()
 

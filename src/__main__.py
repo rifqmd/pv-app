@@ -241,7 +241,58 @@ class SecondPage:
         root.mainloop()
 
     def onKlikCircle(self, event=None):
-        messagebox.showwarning('Informasi', 'Maaf Fitur Ini Masih Dalam Tahap Development', parent=self.parent)
+        # messagebox.showwarning('Informasi', 'Maaf Fitur Ini Masih Dalam Tahap Development', parent=self.parent)
+        root = Tk()
+        root.geometry('350x500')
+        root.title('::Bangun Ruang Lingkaran::')\
+            
+        def choose_color():
+            global pr, pg, pb
+            # memilih warna fill
+            fill_color = colorchooser.askcolor(title="Choose color fill")[0]
+            pr, pg, pb = fill_color[0], fill_color[1], fill_color[2]
+            
+        Label(root, text="Menentukan Jari-Jari").place(x=70, y=10)
+        Label(root, text="‣ Ukuran Jari-Jari").place(x=20, y=50)
+        e_r = Entry(root, width=10)
+        e_r.place(x=20, y=75)
+        
+        Label(root, text="‣ Pilih Warna").place(x=20, y=115)
+        btn_warna_outline = Button(root, text='Click', command=choose_color)
+        btn_warna_outline.place(x=20, y=140)
+        
+        Label(root, text="Menentukan Titik Koordinat").place(x=70, y=200)
+        Label(root, text="‣ Ukuran Y").place(x=20, y=240)
+        e_y = Entry(root, width=10)
+        e_y.place(x=20, y=265)
+        
+        Label(root, text="‣ Ukuran X").place(x=200, y=240)
+        e_x = Entry(root, width=10)
+        e_x.place(x=200, y=265)
+        
+        def process():
+            gambar = np.zeros((1000, 1000, 3), dtype=np.uint8)
+            gambar[:,:,:] = 255
+            
+            def count():
+                return f"progress : {progress['value']}%"
+            
+            while progress['value'] < 100:
+                progress['value'] += 1
+                jumlah['text'] = count()
+                time.sleep(0.04)
+                root.update_idletasks()
+            buat_lingkaran(gambar, int(e_r.get()), int(e_y.get()), int(e_x.get()), pr, pg, pb)
+        
+        btn_process = Button(root, text='Proses', command=process)
+        btn_process.place(x=200, y=400)
+        
+        progress = Progressbar(root, length=280, orient='horizontal', mode='determinate')
+        progress.place(x=25, y=450)
+        jumlah = Label(root, text=' ')
+        jumlah.place(x=120, y=460)
+        
+        root.mainloop()
     
     def onKlikTriangle(self, event=None):
         root = Tk()
