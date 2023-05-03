@@ -155,7 +155,6 @@ def buat_segitiga(gambar, y1, x1, y2, x2, pd, pw, pr, pg, pb, lr, lg, lb):
     plt.imshow(hasil)
     plt.show()
 
-
 def progress_bar():
     
     progress = Progressbar(root, length=280, orient='horizontal', mode='determinate')
