@@ -1,0 +1,7 @@
+Documentation Penggunaan Path Pada Sistem Operasi
+
+# Membentuk path menggunakan tanda slash (/) => Unix/Linux
+path = '/usr/local/bin/file.txt'
+
+# Membentuk path menggunakan tanda backslash (\) atau double backslash (\\) => Windows
+path = 'C:\\Program Files\\file.txt'
