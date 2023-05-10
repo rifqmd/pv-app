@@ -4,4 +4,4 @@ Documentation Penggunaan Path Pada Sistem Operasi
 path = '/usr/local/bin/file.txt'
 
 # Membentuk path menggunakan tanda backslash (\) atau double backslash (\\) => Windows
-path = 'C:\\Program Files\\file.txt'
+path = 'C:\\Program Files\\file.txt\\'
