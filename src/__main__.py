@@ -69,33 +69,33 @@ class SecondPage:
         # 48x48 icon logo
         
         # set button square
-        self.imgSquare = PhotoImage(file='C:\\Users\\fanza\\Documents\\Kampus\\INFORMATIKA\\Semester 4\\Pemrograman Visual (Semester 6)\\TUGAS AKHIR\\img\\square2.png\\')
+        self.imgSquare = PhotoImage(file='img/square2.png')
         self.btnSquare = Button(main_frame, text='Square', image=self.imgSquare, compound='top', command=self.onKlikSquare, width=70)
         # self.btnSquare.pack(side='left', fill=Y)
         self.btnSquare.place(x=10, y=40)
         
         # set button rectangle
-        self.imgRectangle = PhotoImage(file='C:\\Users\\fanza\\Documents\\Kampus\\INFORMATIKA\\Semester 4\\Pemrograman Visual (Semester 6)\\TUGAS AKHIR\\img\\rectangle.png\\')
+        self.imgRectangle = PhotoImage(file='C:img/rectangle.png')
         self.btnRectangle = Button(main_frame, text='Rectangle', image=self.imgRectangle, compound='top', command=self.onKlikRectangle, width=70)
         self.btnRectangle.place(x=90, y=40)
         
         # set button circle
-        self.imgCircle = PhotoImage(file='C:\\Users\\fanza\\Documents\\Kampus\\INFORMATIKA\\Semester 4\\Pemrograman Visual (Semester 6)\\TUGAS AKHIR\\img\\circle.png\\')
+        self.imgCircle = PhotoImage(file='img/circle.png')
         self.btnCircle = Button(main_frame, text='Circle', image=self.imgCircle, compound='top', command=self.onKlikCircle, width=70)
         self.btnCircle.place(x=170, y=40)
 
         # set button tringle
-        self.imgTriangle = PhotoImage(file='C:\\Users\\fanza\\Documents\\Kampus\\INFORMATIKA\\Semester 4\\Pemrograman Visual (Semester 6)\\TUGAS AKHIR\\img\\triangle.png\\')
+        self.imgTriangle = PhotoImage(file='img/triangle.png')
         self.btnTriangle = Button(main_frame, text='Triangle', image=self.imgTriangle, compound='top', command=self.onKlikTriangle, width=70)
         self.btnTriangle.place(x=250, y=40)
 
         # set button tringle
-        self.imgPentagon = PhotoImage(file='C:\\Users\\fanza\\Documents\\Kampus\\INFORMATIKA\\Semester 4\\Pemrograman Visual (Semester 6)\\TUGAS AKHIR\\img\\pentagon.png\\')
+        self.imgPentagon = PhotoImage(file='img/pentagon.png')
         self.btnPentagon = Button(main_frame, text='Pentagon', image=self.imgPentagon, compound='top', command=self.onKlikPentagon, width=70)
         self.btnPentagon.place(x=330, y=40)
         
         # set button hexagon
-        self.imgHexagon = PhotoImage(file='C:\\Users\\fanza\\Documents\\Kampus\\INFORMATIKA\\Semester 4\\Pemrograman Visual (Semester 6)\\TUGAS AKHIR\\img\\hexagon.png\\')
+        self.imgHexagon = PhotoImage(file='img/hexagon.png')
         self.btnTriangle = Button(main_frame, text='Hexagon', image=self.imgHexagon, compound='top', command=self.onKlikHexagon, width=70)
         self.btnTriangle.place(x=410, y=40)
         
