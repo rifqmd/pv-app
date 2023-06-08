@@ -129,19 +129,19 @@ class SecondPage:
         btn_warna_outline.place(x=20, y=140)
         
         Label(root, text="Menentukan Titik Koordinat").place(x=70, y=200)
-        Label(root, text="‣ Posisi Y1").place(x=20, y=240)
+        Label(root, text="‣ Koordinat Y1").place(x=20, y=240)
         e_y1 = Entry(root, width=10)
         e_y1.place(x=20, y=265)
         
-        Label(root, text="‣ Posisi X1").place(x=200, y=240)
+        Label(root, text="‣ Koordinat X1").place(x=200, y=240)
         e_x1 = Entry(root, width=10)
         e_x1.place(x=200, y=265)
         
-        Label(root, text="‣ Posisi Y2").place(x=20, y=305)
+        Label(root, text="‣ Koordinat Y2").place(x=20, y=305)
         e_y2 = Entry(root, width=10)
         e_y2.place(x=20, y=330)
         
-        Label(root, text="‣ Posisi X2").place(x=200, y=305)
+        Label(root, text="‣ Koordinat X2").place(x=200, y=305)
         e_x2 = Entry(root, width=10)
         e_x2.place(x=200, y=330)
         
@@ -200,19 +200,19 @@ class SecondPage:
         btn_warna_outline.place(x=20, y=140)
         
         Label(root, text="Menentukan Titik Koordinat").place(x=70, y=200)
-        Label(root, text="‣ Posisi Y1").place(x=20, y=240)
+        Label(root, text="‣ Koordinat Y1").place(x=20, y=240)
         e_y1 = Entry(root, width=10)
         e_y1.place(x=20, y=265)
         
-        Label(root, text="‣ Posisi X1").place(x=200, y=240)
+        Label(root, text="‣ Koordinat X1").place(x=200, y=240)
         e_x1 = Entry(root, width=10)
         e_x1.place(x=200, y=265)
         
-        Label(root, text="‣ Posisi Y2").place(x=20, y=305)
+        Label(root, text="‣ Koordinat Y2").place(x=20, y=305)
         e_y2 = Entry(root, width=10)
         e_y2.place(x=20, y=330)
         
-        Label(root, text="‣ Posisi X2").place(x=200, y=305)
+        Label(root, text="‣ Koordinat X2").place(x=200, y=305)
         e_x2 = Entry(root, width=10)
         e_x2.place(x=200, y=330)
         
@@ -261,11 +261,11 @@ class SecondPage:
         btn_warna_outline.place(x=20, y=140)
 
         Label(root, text="Menentukan Posisi Koordinat").place(x=70, y=200)
-        Label(root, text="‣ Posisi Y").place(x=20, y=240)
+        Label(root, text="‣ Koordinat Y").place(x=20, y=240)
         e_y = Entry(root, width=10)
         e_y.place(x=20, y=265)
 
-        Label(root, text="‣ Posisi X").place(x=200, y=240)
+        Label(root, text="‣ Koordinat X").place(x=200, y=240)
         e_x = Entry(root, width=10)
         e_x.place(x=200, y=265)
 
@@ -323,19 +323,19 @@ class SecondPage:
         btn_warna_outline.place(x=20, y=140)
         
         Label(root, text="Menentukan Titik Koordinat").place(x=70, y=200)
-        Label(root, text="‣ Posisi Y1").place(x=20, y=240)
+        Label(root, text="‣ Koordinat Y1").place(x=20, y=240)
         e_y1 = Entry(root, width=10)
         e_y1.place(x=20, y=265)
         
-        Label(root, text="‣ Posisi X1").place(x=200, y=240)
+        Label(root, text="‣ Koordinat X1").place(x=200, y=240)
         e_x1 = Entry(root, width=10)
         e_x1.place(x=200, y=265)
         
-        Label(root, text="‣ Posisi Y2").place(x=20, y=305)
+        Label(root, text="‣ Koordinat Y2").place(x=20, y=305)
         e_y2 = Entry(root, width=10)
         e_y2.place(x=20, y=330)
         
-        Label(root, text="‣ Posisi X2").place(x=200, y=305)
+        Label(root, text="‣ Koordinat X2").place(x=200, y=305)
         e_x2 = Entry(root, width=10)
         e_x2.place(x=200, y=330)
         
@@ -393,19 +393,19 @@ class SecondPage:
         btn_warna_outline.place(x=20, y=140)
         
         Label(root, text="Menentukan Titik Koordinat").place(x=70, y=200)
-        Label(root, text="‣ Posisi Y1").place(x=20, y=240)
+        Label(root, text="‣ Koordinat Y1").place(x=20, y=240)
         e_y1 = Entry(root, width=10)
         e_y1.place(x=20, y=265)
         
-        Label(root, text="‣ Posisi X1").place(x=200, y=240)
+        Label(root, text="‣ Koordinat X1").place(x=200, y=240)
         e_x1 = Entry(root, width=10)
         e_x1.place(x=200, y=265)
         
-        Label(root, text="‣ Posisi Y2").place(x=20, y=305)
+        Label(root, text="‣ Koordinat Y2").place(x=20, y=305)
         e_y2 = Entry(root, width=10)
         e_y2.place(x=20, y=330)
         
-        Label(root, text="‣ Posisi X2").place(x=200, y=305)
+        Label(root, text="‣ Koordinat X2").place(x=200, y=305)
         e_x2 = Entry(root, width=10)
         e_x2.place(x=200, y=330)
         
@@ -463,19 +463,19 @@ class SecondPage:
         btn_warna_outline.place(x=20, y=140)
         
         Label(root, text="Menentukan Titik Koordinat").place(x=70, y=200)
-        Label(root, text="‣ Posisi Y1").place(x=20, y=240)
+        Label(root, text="‣ Koordinat Y1").place(x=20, y=240)
         e_y1 = Entry(root, width=10)
         e_y1.place(x=20, y=265)
         
-        Label(root, text="‣ Posisi X1").place(x=200, y=240)
+        Label(root, text="‣ Koordinat X1").place(x=200, y=240)
         e_x1 = Entry(root, width=10)
         e_x1.place(x=200, y=265)
         
-        Label(root, text="‣ Posisi Y2").place(x=20, y=305)
+        Label(root, text="‣ Koordinat Y2").place(x=20, y=305)
         e_y2 = Entry(root, width=10)
         e_y2.place(x=20, y=330)
         
-        Label(root, text="‣ Posisi X2").place(x=200, y=305)
+        Label(root, text="‣ Koordinat X2").place(x=200, y=305)
         e_x2 = Entry(root, width=10)
         e_x2.place(x=200, y=330)
         
