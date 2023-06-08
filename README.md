@@ -1,32 +1,57 @@
-<h1 align="center" id="title">App 2D Generator</h1>
+# PV App
 
-<p align="center"><img src="https://socialify.git.ci/rifqmd/pv-app/image?description=1&amp;descriptionEditable=This%20application%20project%20is%20made%20to%20generate%202D%20geometric%20shapes%2C%20such%20as%20squares%2C%20rectangles%2C%20circles%2C%20triangles%2C%20pentagons%2C%20and%20hexagons.&amp;font=KoHo&amp;language=1&amp;name=1&amp;owner=1&amp;pattern=Circuit%20Board&amp;theme=Auto" alt="project-image"></p>
+About the application creates 2D spatial objects
 
-  
-  
-<h2>🧐 Features</h2>
+# 🚀 Demo
+
+![pv-app-demo](https://github.com/rifqmd/pv-app/blob/master/img/pv-app-demo.gif)
+
+## Features
 
 Here're some of the project's best features:
 
-*   interactive
-*   flexible
-*   powerful
+- Interactive
+- Flexible
+- Powerful
+- User friendly
 
-<h2>🛠️ Installation Steps:</h2>
+## 🛠️ Installation
 
-<p>1. Install</p>
+Installation Steps:
+
+#### 1. Clone git
+
+```
+git clone https://github.com/rifqmd/pv-app.git
+```
+
+#### 2. Move directory
+
+```
+cd pv-app
+```
+
+#### 3. Run program
 
 ```
 __main__.py
 ```
 
-<h2>💻 Built with</h2>
+## 💻 Built with
 
 Technologies used in the project:
 
-*   pyhton
-*   tkinter
+- Python
+- Tkinter
 
-<h2>🛡️ License:</h2>
+## Authors
 
-This project is licensed under the MIT License
+- [@rifqmd](https://github.com/rifqmd) | Develop Desktop PV App
+
+## 🛡️License
+
+[MIT](https://github.com/rifqmd/pv-app/blob/master/LICENSE)
+
+##
+
+If you have any feedback, please reach out to us at rifqi.muhammad@student.upj.ac.id
