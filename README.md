@@ -1,8 +1,23 @@
-# PV App
 
+<h2 align="center"> PV App </h2>
+
+<p align="center">
+    <a href="https://github.com/rifqmd/pv-app/issues"><img src="https://img.shields.io/github/issues/rifqmd/pv-app" alt="GitHub issues"></a>
+    <a href="https://github.com/rifqmd/pv-app"><img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/rifqmd/pv-app"></a>
+    <a href="https://github.com/rifqmd/pv-app/pulls"><img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/rifqmd/pv-app"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/rifqmd/pv-app/issues/new">Submit an Issue</a>
+  <br>
+</p>
+
+## Project Description 
 About the application creates 2D spatial objects
 
-# 🚀 Demo
+<br>
+
+## 🚀 Demo
 
 ![pv-app-demo](https://github.com/rifqmd/pv-app/blob/master/img/pv-app-demo.gif)
 
